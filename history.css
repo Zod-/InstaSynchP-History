@@ -1,0 +1,86 @@
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist {
+  background-color: #f0f0f0;
+  height: 240px;
+  border: 1px solid #DDD;
+  overflow-y: auto;
+  border-radius: 4px;
+  counter-reset: videos
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li {
+  background-color: white;
+  border-radius: 4px;
+  border-bottom: 1px solid #b8b8b8;
+  padding: 4px;
+  font-size: 12px;
+  color: #4c4c4c;
+  cursor: pointer
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .title {
+  float: left;
+  width: calc(100% - 46px)
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .title .list-number {
+  font-weight: bold
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .title:before {
+  counter-increment: videos;
+  content: counter(videos) ". "
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .buttons {
+  cursor: auto;
+  float: right;
+  width: 34px;
+  font-size: 14px;
+  margin-right: 6px;
+  margin-bottom: -3px
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .buttons>* {
+  float: right
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .buttons i {
+  margin-left: 4px;
+  margin-top: 2px
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .pl-video-info {
+  width: 100%;
+  overflow: auto
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .pl-video-info .addedby {
+  display: inline-block;
+  float: left;
+  cursor: auto
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .pl-video-info .duration {
+  font-weight: bold;
+  float: right;
+  display: inline-block;
+  margin-right: 6px;
+  cursor: auto
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li:hover {
+  background-color: #eaeaea
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li.active {
+  background-color: #4a4a4a;
+  color: #d6d6d6
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li.active a {
+  color: #75BEFD
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li.active .buttons i {
+  color: #c8c8c8
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li.active .buttons i:hover {
+  color: white
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist li .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+.room-container .room-component-row .video-controls .tab-content #tabs_playlist_history .playlist {
+  list-style: none;
+  display: block;
+  margin: 0px;
+  padding: 0px
+}
