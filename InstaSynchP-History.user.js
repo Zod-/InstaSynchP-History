@@ -3,7 +3,7 @@
 // @namespace   InstaSynchP
 // @description Adds a tab for the previously played videos
 
-// @version     1
+// @version     1.0.1
 // @author      Zod-
 // @source      https://github.com/Zod-/InstaSynchP-History
 // @license     MIT
@@ -20,17 +20,16 @@ function History(version) {
   "use strict";
   this.version = version;
   this.name = 'InstaSynchP History';
+  this.styles = [{
+    'name': 'playlist_history_css',
+    'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-History/master/history.css',
+    'autoload': true
+  }];
 }
 
 History.prototype.executeOnce = function () {
   "use strict";
   var th = this;
-
-  cssLoader.add({
-    'name': 'playlist_history_css',
-    'url': 'https://cdn.rawgit.com/Zod-/InstaSynchP-History/master/history.css',
-    'autoload': true
-  });
 
   createNavTab({
     tooltip: 'History',
@@ -38,17 +37,17 @@ History.prototype.executeOnce = function () {
     class: 'fa fa-clock-o'
   }).insertAfter('.video-controls > .nav-tabs > li:first-child');
 
-  $('<div>',{
+  $('<div>', {
     class: 'tab-pane',
-    id:'tabs_playlist_history'
+    id: 'tabs_playlist_history'
   }).append(
-    $('<ol>',{
+    $('<ol>', {
       class: 'playlist',
       id: 'playlist_history'
     })
   ).appendTo('.video-controls > .tab-content');
 
-  events.on(th, 'PlayVideo', function(){
+  events.on(th, 'PlayVideo', function () {
     var clone = $('#playlist > li.active').clone().toggleClass('active');
     $('.buttons > .remove-video', clone).remove();
     $('#playlist_history').prepend(clone);
@@ -56,4 +55,4 @@ History.prototype.executeOnce = function () {
 };
 
 window.plugins = window.plugins || {};
-window.plugins.history = new History('1');
+window.plugins.history = new History('1.0.1');
